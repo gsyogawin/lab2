@@ -1,4 +1,4 @@
-div ="header bg" {
+.header_bg {
 
 position: absolute;
 width: 1440px;
@@ -7,6 +7,16 @@ left: 0px;
 top: 0px;
 
 background: #E9A89A;
+}
+
+.photo {
+position: absolute;
+width: 407px;
+height: 375px;
+left: 91px;
+top: 62px;
+
+border: 11px solid #117864;
 }
 
 h1{
