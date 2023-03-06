@@ -6,10 +6,12 @@
 </style>
 </head>
 <body>  
+
 <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $websiteErr = "";
 $name = $email = $gender = $comment = $website = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
@@ -40,17 +42,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $websiteErr = "Invalid URL";
     }
   }
+
   if (empty($_POST["comment"])) {
     $comment = "";
   } else {
     $comment = test_input($_POST["comment"]);
   }
+
   if (empty($_POST["gender"])) {
     $genderErr = "Gender is required";
   } else {
     $gender = test_input($_POST["gender"]);
   }
 }
+
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -58,6 +63,7 @@ function test_input($data) {
   return $data;
 }
 ?>
+
 <h2>PHP Form Validation Example</h2>
 <p><span class="error">* required field</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
@@ -80,6 +86,7 @@ function test_input($data) {
   <br><br>
   <input type="submit" name="submit" value="Submit">  
 </form>
+
 <?php
 echo "<h2>Your Input:</h2>";
 echo $name;
@@ -93,34 +100,31 @@ echo "<br>";
 echo $gender;
 ?>
 
-
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-
-	$servername = "localhost";
-	$username = "root";
-	$password = "";
-	$dbname = "webprogss211db";
-
+    $servername = "192.168.150.213";
+    $username = "webprogss211";
+    $password = "fancyR!ce36";
+    $dbname = "webprogss211";
+	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
 	if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 	}
-
-	$sql = "INSERT INTO MyGuests (firstname, lastname, email)
-	VALUES ('$name', ' ', '$email')";
-
+	
+	$sql = "INSERT INTO gsyogawin_myguests (name, email, website, comment, gender)
+	VALUES ('$name','$email','$website','$comment','$gender')";
+	
 	if ($conn->query($sql) === TRUE) {
 	echo "New record created successfully";
 	} else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
 	}
-
-	$conn->close();
+	
+	$conn->close();	
 }
 ?>
 
