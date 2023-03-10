@@ -99,7 +99,7 @@ points.sort(function(a, b){return a - b});
 document.getElementById("list2").innerHTML = points;
 </script>
 
-<h1>List of my Favorite Games</h1>
+<h1>My Top 3 Games</h1>
 
 <p id="game"></p>
 
@@ -107,12 +107,11 @@ document.getElementById("list2").innerHTML = points;
 const games = ["Valorant", "Minecraft", "Genshin Impact", "Phasmophobia", "Teamfight Tactics"];
 let i, len, text;
 for (i = 0, len = games.length, text = ""; i < len; i++) {
+  if (i === 3) { break; }
   text += games[i] + "<br>";
 }
 document.getElementById("game").innerHTML = text;
 </script>
-
-
 </section>
 
 
