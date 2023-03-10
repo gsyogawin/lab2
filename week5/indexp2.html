@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+#Hobbies {
+background:#E1C4C4;
+padding:15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id=Hobbies>
+<h2>JavaScript Sets</h2>
+<p>Iterating Set values:</p>
+
+<p id="hobbiesList"></p>
+
+<script>
+// Create a Set
+const hobbies = new Set(["Reading", "Gaming", "Watching YouTube videos", "Cooking"]);
+
+// List all Elements
+let text = "";
+for (const x of hobbies.values()) {
+  text += x + "<br>";
+}
+
+document.getElementById("hobbiesList").innerHTML = text;
+</script>
+</div>
+
+</body>
+</html>
