@@ -83,8 +83,22 @@ function myFunction() {
   document.getElementById("sentence").innerHTML =
   text.toUpperCase();
 }
-
 </script>
+
+<h1>Sorting out random numbers</h1>
+<p>Make it lowest to highest value!</p>
+
+<p id="list1"></p>
+<p id="list2"></p>
+
+<script>
+const points = [42, 101, 12, 4, 21, 19];
+document.getElementById("list1").innerHTML = points;  
+
+points.sort(function(a, b){return a - b});
+document.getElementById("list2").innerHTML = points;
+</script>
+
 
 </section>
 
