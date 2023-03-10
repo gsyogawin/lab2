@@ -53,6 +53,11 @@ background:#E1C4C4;
 padding:15px;
 }
 
+#Info{
+background:#E1C4C4;
+padding:15px;
+}
+
 #Arrow {
 background:#E1C4C4;
 padding:15px;
@@ -65,9 +70,9 @@ padding:15px;
 
 <!-- NAVBAR -->
 <ul>
-  <li><a name="b1" href="#Introduction">Introduction</a></li>
-  <li><a name="b1"href="#Interests">Interests</a></li>
-  <li><a name="b1"href="#Socials">Socials</a></li>
+  <li><a name="b1" href="index.html">Introduction</a></li>
+  <li><a name="b1"href="index.html">Interests</a></li>
+  <li><a name="b1"href="index.html">Socials</a></li>
 </ul>
 
 <div id=Hobbies>
@@ -87,6 +92,27 @@ for (const x of hobbies.values()) {
 }
 
 document.getElementById("hobbiesList").innerHTML = text;
+</script>
+</div>
+
+<div id=Info>
+<h2>My Summarized Basic Information</h2>
+
+<p id="demo"></p>
+
+<script>
+const person = {
+  name: "Belle,",
+  age: 20,
+  city: ", Pasay City"
+};
+
+let txt = "";
+for (let x in person) {
+  txt += person[x] + " ";
+};
+
+document.getElementById("demo").innerHTML = txt;
 </script>
 </div>
 
